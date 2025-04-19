@@ -36,7 +36,7 @@ public class Main {
             System.out.println("3. Pencarian Data");
             System.out.println("4. Pengurutan Data");
             System.out.println("5. exit");
-            System.out.println("Pilih Menu (1-5) :");
+            System.out.print("Pilih Menu (1-5) :");
             int pilihan = sc.nextInt();
             sc.nextLine();
 
@@ -48,16 +48,14 @@ public class Main {
                 list.tampilSemuaDataTransaksi();
                 break;
             case 3:
-                System.out.println("Masukkan kode barang : ");
+                System.out.print("Masukkan kode barang : ");
                 String key = sc.nextLine();
-                int posisi = list.searching(key);
-                list.tampilPosisiSearch(key, posisi);
-                list.tampilDataSearch(posisi);
+                list.searching(key);
                 break;
             case 4:
                 System.out.println("Sorting Tranksaksi ASC sesuai kode barang");
                 list.sorting();
-                System.out.println("Pilih menu 2 untuk melihat");
+                list.tampilSemuaDataTransaksi();
                 break;
             case 5:
                 System.out.println("Program dihentikan");

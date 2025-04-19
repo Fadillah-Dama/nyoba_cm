@@ -22,13 +22,23 @@ public class ServiceClass {
         }
     }
 
-    int searching(String key) {
-        for (int i = 0; i < Brg.length; i++) {
+    void searching(String key) {
+        boolean isFounded = false; 
+        System.out.printf("%-10s %-15s %-20s %-10s %-10s %-10s\n", "Kode", "Nama pembeli", "Tanggal pembelian",
+        "Nama barang", "Kuantitas", "Harga");
+
+        for (int i = 0; i < Trs.length; i++) {
             if (Trs[i].brg.kodeBarang.equalsIgnoreCase(key)) {
-                return i;
+                Trs[i].tampilDataTransaksi();
+                isFounded = true;
             }
         }
-        return -1;
+
+        if (!isFounded) {
+            System.out.println("Tranksaksi dengan kode barang " + key + " tidak ditemukan");
+            System.out.println("--------------------------------------------------");
+        }
+        
     }
 
     void sorting() {
@@ -59,15 +69,4 @@ public class ServiceClass {
         }
     }
 
-    void tampilPosisiSearch(String key, int posisi) {
-        if (posisi != -1) {
-            System.out.println("Barang dengan kode " + key + " ditemukan di index : " + posisi);
-        } else {
-            System.out.println("Data tidak ditemukan");
-        }
-    }
-
-    void tampilDataSearch(int posisi) {
-        Trs[posisi].tampilDataTransaksi();
-    }
 }
