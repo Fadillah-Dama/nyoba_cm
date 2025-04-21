@@ -17,11 +17,11 @@ public class Main {
         list.tambahDataBarang(brg4);
         list.tambahDataBarang(brg5);
 
-        TransaksiPembelian tr1 = new TransaksiPembelian("Tr001", "Santi", "21-04-2024", 1, brg1, brg1.harga);
-        TransaksiPembelian tr2 = new TransaksiPembelian("Tr002", "Vani", "21-04-2024", 2, brg2, brg2.harga);
-        TransaksiPembelian tr3 = new TransaksiPembelian("Tr003", "Siska", "23-04-2024", 3, brg3, brg3.harga);
-        TransaksiPembelian tr4 = new TransaksiPembelian("Tr004", "MeiMei", "23-04-2024", 1, brg3, brg3.harga);
-        TransaksiPembelian tr5 = new TransaksiPembelian("Tr005", "Ihsan", "24-04-2024", 1, brg2, brg2.harga);
+        TransaksiPembelian tr1 = new TransaksiPembelian("Tr001", "Santi", "21-04-2024", 1, brg1);
+        TransaksiPembelian tr2 = new TransaksiPembelian("Tr002", "Vani", "21-04-2024", 2, brg2);
+        TransaksiPembelian tr3 = new TransaksiPembelian("Tr003", "Siska", "23-04-2024", 3, brg3);
+        TransaksiPembelian tr4 = new TransaksiPembelian("Tr004", "MeiMei", "23-04-2024", 1, brg3);
+        TransaksiPembelian tr5 = new TransaksiPembelian("Tr005", "Ihsan", "24-04-2024", 1, brg2);
         
         list.tambahDataTransaksi(tr1);
         list.tambahDataTransaksi(tr2);
@@ -41,28 +41,28 @@ public class Main {
             sc.nextLine();
 
             switch (pilihan) {
-            case 1:
-                list.tampilSemuaDataBarang();
-                break;
-            case 2:
-                list.tampilSemuaDataTransaksi();
-                break;
-            case 3:
-                System.out.print("Masukkan kode barang : ");
-                String key = sc.nextLine();
-                list.searching(key);
-                break;
-            case 4:
-                System.out.println("Sorting Tranksaksi ASC sesuai kode barang");
-                list.sorting();
-                list.tampilSemuaDataTransaksi();
-                break;
-            case 5:
-                System.out.println("Program dihentikan");
-                return;
-            default:
-                break;
-        }
+                case 1:
+                    list.tampilSemuaDataBarang();
+                    break;
+                case 2:
+                    list.tampilSemuaDataTransaksi();
+                    break;
+                case 3:
+                    System.out.print("Masukkan kode barang : ");
+                    String key = sc.nextLine();
+                    list.searching(key);
+                    break;
+                case 4:
+                    System.out.println("Sorting Tranksaksi ASC sesuai kode barang");
+                    list.sorting();
+                    list.tampilSemuaDataTransaksi();
+                    break;
+                case 5:
+                    System.out.println("Program dihentikan");
+                    return;
+                default:
+                    break;
+            }
             
         }
     }

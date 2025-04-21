@@ -24,8 +24,8 @@ public class ServiceClass {
 
     void searching(String key) {
         boolean isFounded = false; 
-        System.out.printf("%-10s %-15s %-20s %-10s %-10s %-10s\n", "Kode", "Nama pembeli", "Tanggal pembelian",
-        "Nama barang", "Kuantitas", "Harga");
+        System.out.printf("%-10s %-15s %-20s %-15s %-15s %-10s %-10s\n", "Kode", "Nama pembeli", "Tanggal pembelian",
+        "Kode barang", "Nama barang", "Kuantitas", "Harga");
 
         for (int i = 0; i < Trs.length; i++) {
             if (Trs[i].brg.kodeBarang.equalsIgnoreCase(key)) {
@@ -54,7 +54,7 @@ public class ServiceClass {
     }
 
     void tampilSemuaDataBarang() {
-        System.out.printf("%-10s %-15s %-10s %-15s %-10s\n", "Kode", "Nama", "Kategori",
+        System.out.printf("%-10s %-15s %-10s %-10s %-10s\n", "Kode", "Nama", "Kategori",
         "Stok", "Harga");
         for (int i = 0; i < Brg.length; i++) {
             Brg[i].tampilDataBarang();
@@ -62,7 +62,7 @@ public class ServiceClass {
     }
 
     void tampilSemuaDataTransaksi() {
-        System.out.printf("%-10s %-15s %-20s %-10s %-10s %-10s\n", "Kode", "Nama pembeli", "Tanggal pembelian",
+        System.out.printf("%-10s %-15s %-20s %-15s %-15s %-10s %-10s\n", "Kode", "Nama pembeli", "Tanggal pembelian", "Kode barang",
         "Nama barang", "Kuantitas", "Harga");
         for (int i = 0; i < Trs.length; i++) {
             Trs[i].tampilDataTransaksi();
