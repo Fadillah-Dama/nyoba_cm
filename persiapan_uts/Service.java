@@ -48,6 +48,7 @@ public class Service {
 
     void tranksaksi(Scanner sc) {
         String lanjut = null;
+        idx2 = 0;
 
         tampilSemuaData();
 
@@ -74,7 +75,7 @@ public class Service {
             barangs.kurangiStok(jumlah);
             tambahStruk(barangs, jumlah);
 
-            System.out.print("Ingin membeli barang lagi? (y/n)");
+            System.out.print("Ingin membeli barang lagi? (y/n) : ");
             lanjut = sc.nextLine();
             System.out.println();
 
@@ -82,6 +83,7 @@ public class Service {
         
         System.out.println("----------STRUK----------");
         tampilStruk();
+
     }
 
     void tampilStruk() {
@@ -110,6 +112,20 @@ public class Service {
         }
 
         tampilSemuaData();
+    }
+
+    void searchTerlaris() {
+        int max = 0;
+        int indexMax = 0;
+        for (int i = 0; i < idx; i++) {
+            if (brg[i].jumlahTerbeli > max) {
+                max = brg[i].jumlahTerbeli;
+                indexMax = i;
+            }
+        }
+
+        System.out.println("Barang terlaris adalah " + brg[indexMax].namaBarang + " dengan penjualan sebanyak "
+        + max);
     }
 
     

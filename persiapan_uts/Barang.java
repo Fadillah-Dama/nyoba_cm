@@ -5,6 +5,7 @@ public class Barang {
     String namaBarang;
     int stok;
     int hargaSatuan;
+    int jumlahTerbeli;
 
     Barang(String kode, String namaBarang, int stok, int hargaSatuan) {
         this.kode = kode;
@@ -16,6 +17,7 @@ public class Barang {
     void kurangiStok(int jumlahDibeli) {
         if (stok >= jumlahDibeli) {
             stok -= jumlahDibeli;
+            jumlahTerbeli += jumlahDibeli;
         }
     }
 
